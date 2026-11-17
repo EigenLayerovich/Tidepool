@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Tidepool: a hands-first music pool for Meta Quest. Pinch lights from the air, drop them into the water and play the tide." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='26' fill='%2306202f' stroke='%239fe8ff' stroke-width='4'/%3E%3Ccircle cx='32' cy='18' r='5' fill='%23ffe066'/%3E%3C/svg%3E" />
+    <title>Tidepool</title>
+    <style>
+      html, body { margin: 0; height: 100%; background: #02101a; overflow: hidden; font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif; }
+      #scene-container { position: fixed; inset: 0; }
+      #landing { position: fixed; left: 0; right: 0; bottom: 0; padding: 28px 16px 32px; display: flex; flex-direction: column; align-items: center; gap: 10px; color: #e8fbff; text-align: center; background: linear-gradient(to top, rgba(2,16,26,0.95), rgba(2,16,26,0.75) 60%, rgba(2,16,26,0)); transition: opacity .4s; }
+      #landing.hidden { opacity: 0; pointer-events: none; }
+      #landing.mini .blurb, #landing.mini #preview { display: none; }
+      h1 { margin: 0; font-weight: 600; letter-spacing: .32em; font-size: clamp(28px, 6vw, 44px); padding-left: .32em; }
+      .tag { margin: 0; color: #9fe8ff; font-size: 16px; }
+      .blurb { max-width: 560px; margin: 4px 0 6px; color: #b9d8e2; font-size: 14px; line-height: 1.5; }
+      .row { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; }
+      button { font: inherit; font-size: 16px; padding: 12px 26px; border-radius: 999px; border: 1px solid #9fe8ff; cursor: pointer; }
+      #enter-xr { background: #9fe8ff; color: #032333; font-weight: 600; }
+      #enter-xr:disabled { opacity: .45; cursor: default; }
+      #preview { background: transparent; color: #9fe8ff; }
+      #xr-note { min-height: 1em; margin: 0; font-size: 13px; color: #8fb3bf; max-width: 520px; }
+    </style>
+  </head>
+  <body>
+    <div id="scene-container"></div>
+    <div id="landing">
+      <h1>TIDEPOOL</h1>
+      <p class="tag">Pinch light from the air. Let the tide play it.</p>
+      <p class="blurb">A pool of water appears at your desk in mixed reality. Drop floating lights into it to grow a loop, dip a finger in to play, and hold your palm over the water to shift the tide. Hands only. Best seated, with headphones.</p>
+      <div class="row">
+        <button id="enter-xr">Enter Tidepool</button>
+        <button id="preview">Desktop preview</button>
+      </div>
+      <p id="xr-note"></p>
+    </div>
+    <script type="module" src="/src/index.ts"></script>
+  </body>
+</html>
